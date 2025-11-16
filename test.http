@@ -1,0 +1,77 @@
+### 1. POST /users - 유저 생성
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+  "name": "ahnneu",
+  "email": "ahnneu@example.com"
+}
+
+
+### 2. POST /users - 잘못된 요청
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+  "name": "only-name"
+}
+
+### 3. GET /users - 전체 유저 조회
+GET http://localhost:3000/users
+
+### 4. GET /users/1 - 특정 유저 조회
+GET http://localhost:3000/users/1
+
+### 5. GET /users/999 - 존재하지 않는 유저
+GET http://localhost:3000/users/999
+
+### 6. POST /users/1/deactivate - 유저 비활성화
+POST http://localhost:3000/users/1/deactivate
+
+### 7. PUT /users/1 - 유저 정보 수정
+PUT http://localhost:3000/users/1
+Content-Type: application/json
+
+{
+  "name": "new-name",
+  "email": "new-email@example.com"
+}
+
+### 8. PUT /users/1 - 수정할 값 없음
+PUT http://localhost:3000/users/1
+Content-Type: application/json
+
+{
+}
+
+### 9. PUT /users/1/password - 비밀번호 변경 성공
+PUT http://localhost:3000/users/1/password
+Content-Type: application/json
+
+{
+  "password": "strongpw"
+}
+
+### 10. PUT /users/1/password - 짧은 비밀번호
+PUT http://localhost:3000/users/1/password
+Content-Type: application/json
+
+{
+  "password": "123"
+}
+
+### 11. DELETE /users/1 - 특정 유저 삭제
+DELETE http://localhost:3000/users/1
+
+### 12. DELETE /users/999 - 없는 유저 삭제 시도
+DELETE http://localhost:3000/users/999
+
+### 13. DELETE /users - 모든 유저 삭제
+DELETE http://localhost:3000/users
+
+
+### 14. GET /force-error - 강제 서버 에러
+GET http://localhost:3000/force-error
+
+### 15. GET /maintenance - 서비스 점검
+GET http://localhost:3000/maintenance
